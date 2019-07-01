@@ -1,0 +1,15 @@
+package a_linelist;
+
+// 자바 배열로 구현한 리스트형 자료구조
+// 리스트 : 메모리에 연속적인 공간 할당
+public class LineList {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int sale[] = new int[] {12, 45, 67, 43, 56, 98};
+		for (int i =0 ; i<6; i++) {
+			System.out.printf("The Sales result = %d %n", sale[i]);
+		}
+
+	}
+
+}

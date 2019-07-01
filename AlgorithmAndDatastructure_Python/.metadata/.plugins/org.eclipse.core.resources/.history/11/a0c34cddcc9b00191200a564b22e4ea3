@@ -1,0 +1,46 @@
+package a_stack_linkedList.copy;
+
+
+public class LinkedList {
+	
+	private Link first;
+	
+	// 생성자
+	public LinkedList() {
+		// 처음 연결리스트를 아무런 인자없이 생성하면 빈 리스트가 생성된다.
+		first = null;
+	}
+	
+	// isEmpty
+	public boolean isEmpty(){ return first == null; }
+	
+	// 삽입
+	public void insert(int d1, double d2){
+		Link link = new Link(d1, d2);
+		link.nextLink = first;
+		first = link;
+	}
+	
+	// 삭제 : 첫번째 원소 제거
+	public Link delete() {
+		// 정보 저장
+		Link tmp = first;
+		first = first.nextLink;
+		// 파이썬과의 차이 : Garbage Collector. 파이썬/C/C++은 overflow 방지를 위해 delete할 때 메모리 해제 작업을 직접 해주어야 하지만 자바는 알아서.
+		// System.gc(); 실무에서 사용하면 안된다. 스레드를 다 죽인다고 함. https://yaboong.github.io/java/2018/06/09/java-garbage-collection/)
+		return tmp;
+	}
+
+	// 출력
+	public void print() {
+		Link current = first;
+		System.out.print("List: " );
+		while ( current != null) {
+			current.print();
+			current = current.nextLink;
+		}
+		System.out.println("" );
+		
+	}
+
+}

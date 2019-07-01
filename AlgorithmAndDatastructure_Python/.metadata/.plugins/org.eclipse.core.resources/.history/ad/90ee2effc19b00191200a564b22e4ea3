@@ -1,0 +1,27 @@
+package Link;
+
+
+public class LinkList {
+	
+	private Link first;
+	
+	// 생성자
+	public LinkList() {
+		// 처음 연결리스트를 아무런 인자없이 생성하면 빈 리스트가 생성된다.
+		first = null;
+	}
+	
+	// isEmpty
+	public boolean isEmpty(){ return first == null; }
+	
+	// 삽입
+	public void insert(int data1, double data2){
+		
+		
+	}
+	
+	// 삭제
+
+	// 출력
+
+}
