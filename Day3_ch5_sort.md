@@ -1,26 +1,36 @@
-##  5.1 정렬 알고리즘
+##  정렬 알고리즘
+
+[TOC]
+
+------
 
 
+
+### 5.1 정렬 알고리즘
 
 ##### 1) 정렬 알고리즘의 종류
 
 1. 버킷 (Bucket)
 
-2. 선택 (Selection)
+2. 기수 (Radix)
 
-3. 삽입 (Insert)
+   
 
-4. 병합 (Merge)
+3. **선택 (Selection)**
 
-5. 힙 (Heap)
+4. **교환 ( Exchange ) , 버블 (Bubble)**
 
-6. 기수 (Radix)
+5. **삽입 (Insert)** 
 
-7. 교환 ( Exchange )
+6. **셀 (Shell)**
 
-8. 셀 (Shell)
+   
 
-9. 퀵 (Quick) - C언어 STL(표준라이브러리)로 제공하는 정렬
+7. **병합 (Merge)** - Divide and Conquer
+
+8. **퀵 (Quick)** - 중앙값 ,Divide and Conquer, **C언어 STL(표준라이브러리)**로 제공하는 정렬 
+
+9. 힙 (Heap)
 
 2) 시간 복잡도
 
@@ -28,7 +38,7 @@
 
 
 
-## 5.2 버킷 정렬 
+### 5.2 버킷 정렬 
 
 ##### 1) 버킷 정렬 알고리즘  
 
@@ -46,15 +56,15 @@
 
    <https://ratsgo.github.io/data%20structure&algorithm/2017/10/18/bucketsort/>
 
-  두번째 그림과 같이 10개의 데이터 AA가 주어졌을 때 같은 크기의 버킷 BB를 만듭니다. 만약 AA의 분포가 균등하다면 각 버킷에는 1~2개의 요소만 속해 있을 것입니다. 
-  이렇게 1~2개 값들만 있는 버킷 하나를 정렬하는 데 필요한 계산복잡성은 O(1)O(1)이 될 것이고, 
-  이 작업을 nn개 버킷에 모두 수행한다고 하면 전체적인 계산복잡성은 O(n)O(n)이 될 것입니다. 이것이 바로 버킷 정렬이 노리는 바입니다.
+  두번째 그림과 같이 10개의 데이터 A가 주어졌을 때 같은 크기의 버킷 B를 만듭니다. 만약 A의 분포가 균등하다면 각 버킷에는 1~2개의 요소만 속해 있을 것입니다. 
+  이렇게 1~2개 값들만 있는 버킷 하나를 정렬하는 데 필요한 계산복잡성은 O(1)이 될 것이고, 
+  이 작업을 n개 버킷에 모두 수행한다고 하면 전체적인 계산복잡성은 O(n)이 될 것입니다. 이것이 바로 버킷 정렬이 노리는 바입니다.
 
   
 
 ##### 2) 사용 방법
 
-- 데이터 nn개가 주어졌을 때 데이터의 범위를 nn개로 나누고 이에 해당하는 nn개의 버킷을 만든다.
+- 데이터 nn개가 주어졌을 때 데이터의 범위를 n개로 나누고 이에 해당하는 n개의 버킷을 만든다.
 
 - 각각의 데이터를 해당하는 버킷에 집어 넣는다. (C 등에서는 [연결리스트](https://ratsgo.github.io/data%20structure&algorithm/2017/09/30/list/)를 사용하며 새로운 데이터는 연결리스트의 head에 *insert*한다)
 
@@ -64,7 +74,7 @@
 
   
 
-## 5.3 기수 정렬 
+### 5.3 기수 정렬 
 
 ##### 1) 기수 정렬 알고리즘  
 
@@ -89,7 +99,7 @@
 
    
 
-## 5.4 선택 정렬 
+### 5.4 선택 정렬 
 
 ##### 1) 선택 정렬 알고리즘 
 
@@ -99,16 +109,20 @@
 
 
 
-## 5.5 교환 정렬 (≒버블정렬)
+### 5.5 교환 정렬 (≒버블정렬)
 
 ##### 1) 교환 정렬 알고리즘 
 
 - 첫번째 요소와 다른 요소들을 비교하고 교환하는 방식으로 진행
 - 책에서는 bubble과 혼란이 오니 책 내용은 보지 말 것.
 
-##### 2) 교환 vs 버블정렬 ( <http://blog.naver.com/PostView.nhn?blogId=ryutuna&logNo=100123462798> )
+##### 2) 교환 vs 버블정렬
 
-​         How is the exchange sort different from the bubble sort? : https://www.codingunit.com/exchange-sort-algorithm>
+> *  <http://blog.naver.com/PostView.nhn?blogId=ryutuna&logNo=100123462798> 
+>
+> *  How is the exchange sort different from the bubble sort?
+>
+>   ​	<https://www.codingunit.com/exchange-sort-algorithm>
 
 * 요소들을 비교하는 방법에 차이가 있음
 
@@ -128,7 +142,7 @@
 
 
 
-## 5.6 삽입 정렬 알고리즘
+### 5.6 삽입 정렬 알고리즘
 
 ##### 1) 삽입(Insert) 정렬 
 
@@ -144,7 +158,7 @@
 
 
 
-## 5.7 쉘 정렬 알고리즘
+### 5.7 쉘 정렬 알고리즘
 
  https://gmlwjd9405.github.io/2018/05/08/algorithm-shell-sort.html
 
@@ -179,7 +193,7 @@
 
 
 
-## 5.8 병합 정렬 알고리즘
+### 5.8 병합 정렬 알고리즘
 
 https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html
 
@@ -223,7 +237,7 @@ https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html
 
 * 단점
 
-  * 레코드를 **배열(Array)**로 구성하면 임시 배열이 필요하다. -> **제자리 정렬(in-place sorging)**이 아니다.
+  * 레코드를 **배열(Array)**로 구성하면 **임시 배열이 필요**하다. -> **제자리 정렬(in-place sorging)**이 아니다.
 
   * **레코드들의 크기가 큰 경우**에는 이동 횟수가 많으므로 매우 큰 시간적 낭비
 
@@ -243,13 +257,13 @@ https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html
 
 
 
-## 5.9 퀵 정렬 알고리즘
+### 5.9 퀵 정렬 알고리즘
 
 https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html
 
 ##### 1) 퀵(Quick) 정렬 
 
-* 중앙 값 정렬 방식을 확장해서 개발한 방식
+* 중앙값 정렬 방식을 확장해서 개발한 방식
 
 - **불안정** 정렬, **비교** 정렬 - 다른 원소와의 비교만으로 정렬을 수행
 - **분할 정복** 알고리즘, **평균적으로 매우 빠른 수행 속도** 
@@ -257,9 +271,9 @@ https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html
 
 ##### 2) 알고리즘
 
-* 분할 : 입력 배열을 피벗을 기준으로 비균등하게 2개의 부분 배열 (  보다 작은 애들 <- (pivot) -> 보다 큰 애들)로 분할한다.
-* 정복 : 부분 배열을 정렬한다. 부분 배열의 크기가 충분히 작지 않으면 순환 호출을 이용, 반복
-* 결합 : 합병.
+* **분할** : 입력 배열을 피벗을 기준으로 비균등하게 2개의 부분 배열 (  보다 작은 애들 <- (pivot) -> 보다 큰 애들)로 분할한다.
+* **정복** : 부분 배열을 정렬한다. 부분 배열의 크기가 충분히 작지 않으면 순환 호출을 이용, 반복
+* **결합** : 합병.
 * 순환 호출이 한 번 진행될 때마다 **최소한 하나의 원소(피벗)는 최종적으로 위치가 정해**지므로, 이 알고리즘은 **반드시 끝난다는 것을 보장**할 수 있다.
 
 ![](https://gmlwjd9405.github.io/images/algorithm-quick-sort/quick-sort.png)
@@ -285,7 +299,7 @@ https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html
 
     
 
-## 5.10 힙 정렬 알고리즘
+### 5.10 힙 정렬 알고리즘
 
 https://smartstore.naver.com/sechorom/category/1168f31e593047528eba10ef11b4c624?cp=1
 
@@ -307,7 +321,7 @@ https://smartstore.naver.com/sechorom/category/1168f31e593047528eba10ef11b4c624?
 
 
 
-## 5.11 정렬 알고리즘 선택 기준 
+### 5.11 정렬 알고리즘 선택 기준 
 
 ##### ![](https://github.com/arara90/images/blob/master/sorts.jpg?raw=true)
 
