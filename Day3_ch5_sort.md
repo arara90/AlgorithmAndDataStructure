@@ -120,9 +120,9 @@
 
 > *  <http://blog.naver.com/PostView.nhn?blogId=ryutuna&logNo=100123462798> 
 >
-> *  How is the exchange sort different from the bubble sort?
+> * How is the exchange sort different from the bubble sort?
 >
->   ​	<https://www.codingunit.com/exchange-sort-algorithm>
+>     ​	<https://www.codingunit.com/exchange-sort-algorithm>
 
 * 요소들을 비교하는 방법에 차이가 있음
 
@@ -164,7 +164,7 @@
 
 ##### 1) 쉘(shell) 정렬  
 
-- 삽입 정렬의 느린 속도 보안
+- 삽입 정렬의 느린 속도 보완
 - 데이터의 그룹을 나누어 그룹 안에서 쉘 정렬을 수행하고 마지막에 삽입정렬을 수행
 
 ##### 2) 장점
@@ -198,6 +198,8 @@
 https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html
 
 ##### 1) 병합(Merge) 정렬 
+
+* 최소 단위 (1개) 까지 쪼갠 후 합치면서 정렬.
 
 - **안정** 정렬, **분할 정복** 알고리즘 (devide and conquer)
   - 분할 정복 알고리즘? (Devide and Conquer)
@@ -297,6 +299,14 @@ https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html
 
     -> 퀵 정렬의 불균형 분할을 방지하기 위하여 피벗을 선택할 때 더욱 리스트를 균등하게 분할할 수 있는 데이터를 선택한다. ex) 리스트 내의 몇 개의 데이터 중에서 크기 순으로 중간값을 피벗으로 선택한다.
 
+    > -> **궁금증?**
+    >
+    > ​	 정렬된 리스트가 더 유리할거 같은데... 중간값을 갖는 피벗을 어떻게 잘 선택하지??
+    >
+    > ​	 https://ghd5262.tistory.com/25 
+    
+    
+    
     
 
 ### 5.10 힙 정렬 알고리즘
