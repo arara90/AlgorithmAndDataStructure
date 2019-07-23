@@ -337,6 +337,8 @@ https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html
 
 ### 5.9 퀵 정렬 알고리즘
 
+* Java나 python의 sort.. 대부분 언어의 내장 sort함수는 퀵정렬이다!
+
 https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html
 
 ##### 1) 퀵(Quick) 정렬 
