@@ -2,7 +2,7 @@
 # 참고 사이트
 # 1. https://www.acmicpc.net/board/view/855
 # 2. 자바의 경우도 Scanner보다 BufferedReader가 빠르다 (why?)
-# 3. python - 데이터를 입력받는 방법에 대해 :  https://soooprmx.com/archives/8242
+# 3. python -  https://soooprmx.com/archives/8242
 
 import sys
 for line in sys.stdin:
