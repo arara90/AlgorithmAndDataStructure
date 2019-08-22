@@ -1,6 +1,6 @@
 def solution(N, stages):
     # N : 스테이지의 수 (최대 500)
-    # stages : 유저가 머믈고 있는 곳(index)과 유저수 (value)
+    # stage : 유저가 머믈고 있는 곳(index)과 유저수 (value)
     stage = [0 for i in range(0, N + 1)]
     num_user = len(stages)  # 전체유저수
 
