@@ -1,26 +1,22 @@
-# 효율성 0 점...ㅠ.ㅠ .. 다 구해서 그럴까?
+# 1. 한글자 이상?
+# 2. 이전에 말한 단어?
+# 3. 앞사람의 끝단어와 일치?
 
+def get_res(num,n):
+    return [ num % n + 1, num //n + 1 ] 
 
-def solution(n):
-    global tmp_list
-    tmp_list = [0 for _ in range(0, n)]
-    tmp_list[0:2] = [0, 1, 1]
+def solution(n, words):
+    answer = [0,0]
 
-    for i in range(0, n+1):
-        if i < 3:
-            #print('i<3', i, tmp_list[i] )
-            pass
+    for i in range(1, len(words)):
+        if len(words[i]) < 1 :
+            answer = get_res(i, n)
+            break
+        elif words[i] in words[0:i-1]:
+            answer = get_res(i, n)
+            break
+        elif words[i][0] != words[i-1][-1]:
+            answer = get_res(i, n)
+            break
 
-        else :
-            if (i % 2 == 0):
-                tmp_list[i] = min(tmp_list[int(i/2)], tmp_list[i-1]+1)
-            else:
-                tmp_list[i] = tmp_list[i-1]+1
-
-            #print('i>3', i, tmp_list[i])
-
-    ans = tmp_list[n]
-    print(tmp_list)
-    return ans
-
-print(solution(5000))
+    return answer
