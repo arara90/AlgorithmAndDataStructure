@@ -74,5 +74,6 @@
 ### 진법 변환 후 1이 몇개있는지 세기
 # 진법변환 함수 : int,bin, oct, dec, hex
 # https://sarc.io/index.php/development/857-python-bin-oct-dec-hex
+
 def solution(n):
     return list(bin(n)).count('1')
