@@ -1,4 +1,4 @@
-## 정확정 : 38.1 / 38.1	효율성 : 0.0 / 11.9	총점 : 38.1 / 50.0
+## 정확성 : 38.1 / 38.1	효율성 : 0.0 / 11.9	총점 : 38.1 / 50.0
 
 ## level2 두번째 문제였는데, 첫번째 문제는 저번에 했던 끝말잇기라 10분 안에 풀었고
 ## 이 문제에서 거의 45분~50분 정도를 쓴 듯.
@@ -10,6 +10,8 @@
 ## 2. heap으로 짜보기(우선순위큐)
 ## 3. 내가 생각한 heap이 맞는지 생각해보고, 최적 코드 만들어보기.
 
+
+## 1. 첫번째 시도 : 정확성만 통과.
 # def mixFood(list_s):
 #     a = list_s.pop()
 #     b = list_s.pop()
@@ -99,17 +101,38 @@
 #
 
 
+## 3. 시간초과!? -> scoville.pop(0) 요거 사용하면 시간초과
+# import heapq
+# def solution(scoville, k):
+#     heap = []
+#     answer = 0
+#     while scoville:
+#         heapq.heappush(heap, scoville.pop(0))
+#
+#     while heap[0] < k:
+#         try:
+#             heapq.heappush(heap, heapq.heappop(heap) + (heapq.heappop(heap) * 2))
+#         except IndexError:
+#             return -1
+#
+#         answer += 1
+#     return answer
+
+## 4. 성공 -> scoville.pop(0) 요거 제거!
 import heapq
 def solution(scoville, k):
     heap = []
     answer = 0
-    while scoville:
-        heapq.heappush(heap, scoville.pop(0))
+
+    # haeqp.heapify(scoville)
+    for num in scoville:
+        heapq.heappush(heap, num)
 
     while heap[0] < k:
         try:
             heapq.heappush(heap, heapq.heappop(heap) + (heapq.heappop(heap) * 2))
         except IndexError:
+            # 아마 heap[1]이 없는 경우가 걸릴 것이야!
             return -1
 
         answer += 1
