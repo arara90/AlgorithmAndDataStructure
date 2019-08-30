@@ -10,46 +10,96 @@
 ## 2. heap으로 짜보기(우선순위큐)
 ## 3. 내가 생각한 heap이 맞는지 생각해보고, 최적 코드 만들어보기.
 
-def mixFood(list_s):
-    a = list_s.pop()
-    b = list_s.pop()
+# def mixFood(list_s):
+#     a = list_s.pop()
+#     b = list_s.pop()
+#     s = a + (b*2)
+#     list_s.append(s)
+#
+#     i = len(list_s) - 1
+#
+#     while i > 0 :
+#         parent = i - 1
+#         if ( list_s[parent] < s ) :
+#             ( list_s[parent], list_s[i] )  = ( list_s[i], list_s[parent] )
+#             i = parent
+#         else :
+#             break
+#     return list_s
+#
+# def solution(scoville, K):
+#
+#     # 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return
+#     answer = 0
+#     scoville = sorted(scoville, reverse = True)
+#
+#     # reverse했으니까 뒤에서부터 오는게 맞을듯
+#     i = len(scoville) - 1
+#     while i > 0:
+#         if scoville[i] < K:
+#             scoville = mixFood(scoville)
+#             answer = answer + 1
+#             i = len(scoville) - 1
+#
+#             if len(scoville) == 1:
+#                 if scoville[0] < K:
+#                     return -1
+#                 else:
+#                     return answer
+#         else:
+#             i = i-1
+#
+#     return answer
+#
+#
+# print(solution([1, 2, 3, 9, 10, 12], 7))
 
-    s = a + (b*2)
-    list_s.append(s)
 
-    i = len(list_s) - 1
-
-    while i > 0 :
-        parent = i - 1
-        if ( list_s[parent] < s ) :
-            ( list_s[parent], list_s[i] )  = ( list_s[i], list_s[parent] )
-            i = parent
-        else :
-            break
-    return list_s
+## 간단하다.. heapq 라이브러리만 import하면 heap코드 모두 짜지 않아도되네!
 
 
+##### 시간초과 !!.. 왜지?
 def solution(scoville, K):
-
+    import heapq
     # 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return
     answer = 0
-    scoville = sorted(scoville, reverse = True)
+    heap = []
 
-    i = 0
+    #1. heap에 담기
+    while scoville:
+        try:
+            heapq.heappush(heap,scoville.pop(0))
+        except IndexError:
+            return -1
 
-    # K검사
-    while i < len(scoville) :
-        if ( scoville[i] < K ):
-            scoville = mixFood(scoville)
-            answer = answer + 1
+    #2. 제일 작은 값만 K와 검사하면 된다.
+    while heap:
+        a = heapq.heappop(heap)
 
-            if len(scoville) == 1 :
-                if scoville[0] < K:
-                    return -1
-                else :
-                    return answer
+        # 마지막 남은 값인 경우
+        if not heap:
+            if a < K:
+                answer = -1
+                break
 
-        else :
-            i+=1
+        else:
+            # 최소값만 비교해보기
+            if a < K:
+                # mix 점수 계산해서 heap에 push
+                b = heapq.heappop(heap)
+                s = a + b * 2
+                heapq.heappush(heap, s)
+                answer += 1
+
+            # 최소값이 K보다 크므로, 모든 값이 K보다 크다.
+            else :
+                break
+
 
     return answer
+
+
+print(solution([1, 2, 3, 9, 10, 12], 7))
+
+
+
