@@ -54,48 +54,65 @@
 #
 # print(solution([1, 2, 3, 9, 10, 12], 7))
 
-
+## 2. heapq 이용하기.
 ## 간단하다.. heapq 라이브러리만 import하면 heap코드 모두 짜지 않아도되네!
+## 결과 : 시간초과 !!.. 왜지?
+
+# def solution(scoville, K):
+#     import heapq
+#     # 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return
+#     answer = 0
+#     heap = []
+#
+#     #1. heap에 담기
+#     while scoville:
+#         try:
+#             heapq.heappush(heap,scoville.pop(0))
+#         except IndexError:
+#             return -1
+#
+#     #2. 제일 작은 값만 K와 검사하면 된다.
+#     while heap:
+#         a = heapq.heappop(heap)
+#
+#         # 마지막 남은 값인 경우
+#         if not heap:
+#             if a < K:
+#                 answer = -1
+#                 break
+#
+#         else:
+#             # 최소값만 비교해보기
+#             if a < K:
+#                 # mix 점수 계산해서 heap에 push
+#                 b = heapq.heappop(heap)
+#                 s = a + b * 2
+#                 heapq.heappush(heap, s)
+#                 answer += 1
+#
+#             # 최소값이 K보다 크므로, 모든 값이 K보다 크다.
+#             else :
+#                 break
+#
+#
+#     return answer
+#
 
 
-##### 시간초과 !!.. 왜지?
-def solution(scoville, K):
-    import heapq
-    # 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return
-    answer = 0
+import heapq
+def solution(scoville, k):
     heap = []
-
-    #1. heap에 담기
+    answer = 0
     while scoville:
+        heapq.heappush(heap, scoville.pop(0))
+
+    while heap[0] < k:
         try:
-            heapq.heappush(heap,scoville.pop(0))
+            heapq.heappush(heap, heapq.heappop(heap) + (heapq.heappop(heap) * 2))
         except IndexError:
             return -1
 
-    #2. 제일 작은 값만 K와 검사하면 된다.
-    while heap:
-        a = heapq.heappop(heap)
-
-        # 마지막 남은 값인 경우
-        if not heap:
-            if a < K:
-                answer = -1
-                break
-
-        else:
-            # 최소값만 비교해보기
-            if a < K:
-                # mix 점수 계산해서 heap에 push
-                b = heapq.heappop(heap)
-                s = a + b * 2
-                heapq.heappush(heap, s)
-                answer += 1
-
-            # 최소값이 K보다 크므로, 모든 값이 K보다 크다.
-            else :
-                break
-
-
+        answer += 1
     return answer
 
 
