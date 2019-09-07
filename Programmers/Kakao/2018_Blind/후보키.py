@@ -10,18 +10,47 @@
 
 def solution(relation):
     answer = 0
+    row_size = len(relation)
     col_size = len(relation[0])
-    graph = []
+    map_edges=[]
+    edges = []
+    print('col_size', col_size)
 
+
+    # i+1
     for i in range(0, col_size):
-        graph[i] = [ col_num for col_num in range( i+1, col_size )  ]
+        print('i: ', i)
+        map_edges.append(  [ _ for _ in range(0, col_size-i) ] )
+    print(map_edges)
+
+    for i in range(0,col_size):
+        for j in range(0, len(map_edges[i])):
+            print([i,j])
+            for k in range(0, i+1 ):
+                map_edges[i][j] = k
 
 
-    print(graph)
-
-    return answer
 
 
-graph =[col_num for col_num in range( 1, 5) ]
-print(graph)
-# a = solution([ [1,2,3,4,5]])
+
+
+        print(f' ----------- {i} ----------- ')
+
+    print(map_edges)
+
+
+
+
+
+# 1. 시작점 설정
+# 2. 다음 노드 가져오기
+
+
+relation = [["100","ryan","music","2"],
+            ["200","apeach","math","2"],
+            ["300","tube","computer","3"],
+            ["400","con","computer","4"],
+            ["500","muzi","music","3"],
+            ["600","apeach","music","2"]]
+
+a = solution(relation)
