@@ -1,4 +1,4 @@
-package InputOuput;
+package Basic;
 import java.util.ArrayList;
 
 public class GenericPractice {

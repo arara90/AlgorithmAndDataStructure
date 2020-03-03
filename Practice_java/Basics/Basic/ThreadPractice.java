@@ -1,4 +1,4 @@
-package InputOuput;
+package Basic;
 
 public class ThreadPractice {
 

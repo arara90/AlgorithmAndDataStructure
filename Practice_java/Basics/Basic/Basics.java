@@ -1,6 +1,7 @@
-package InputOuput;
+package Basic;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,7 +10,6 @@ import model.Hero;
 import model.Character;
 import model.ICharacter;
 import model.Magician;
-
 
 public class Basics {
 
@@ -46,8 +46,8 @@ public class Basics {
 		
 		//문자열 <-> 숫자열
 		String str1 = "100";
-		int ii = Integer.parseInt(str1);
-		String str11 = String.valueOf(ii);
+		int ii = Integer.parseInt(str1);   //str -> num
+		String str11 = String.valueOf(ii); //num -> str
 		
 		//Random
 		Random random = new Random();
@@ -218,6 +218,10 @@ public class Basics {
 	
 	
 	//Generic
+	
+	
+	
+
 	
 
 }
