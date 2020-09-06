@@ -1,3 +1,7 @@
+#하나의 리스트에서 모든 조합 -> permutations, combinations
+# 두개의 리스트의 모든 조함 -> product
+
+
 #1.cartesian
 import itertools
 
@@ -40,3 +44,43 @@ pool = ['A', 'B', 'C']
 print(list(map(''.join, itertools.permutations(pool)))) # 3개의 원소로 수열 만들기
 print(list(map(''.join, itertools.permutations(pool, 2)))) # 2개의 원소로 수열 만들기
 print(list(map(''.join, itertools.combinations(pool,2))))
+
+
+
+
+# 직접 구현
+# https://blog.naver.com/kmh03214/221685090465
+#조합
+def combinations(arr,r):
+    for i in range(len(arr)):  # 함수에서 지금할 일
+        if r == 1:  # 종료조건
+            yield [arr[i]]
+        else:
+            for next in combinations(arr[i+1:],r-1): # 다음에 할 일
+                yield [arr[i]] + next
+
+
+
+# 아래는 함수를 실행하기 위한 사용법입니다.
+for combi in combinations([1,2,3,4,5],2):
+    print(combi)
+
+
+#중복조합
+def combinations_with_replacement(arr,r):
+    for i in range(len(arr)):
+        if r == 1:
+            yield [arr[i]]
+        else:
+            for next in combinations_with_replacement(arr[i:],r-1):
+                yield [arr[i]] + next
+
+#중복순열
+def product(arr,r):
+    for i in range(len(arr)):
+        if r == 1:
+            yield [arr[i]]
+        else:
+            for next in product(arr,r-1):
+                yield [arr[i]] + next
+
