@@ -43,7 +43,13 @@ def permute(arr):
 pool = ['A', 'B', 'C']
 print(list(map(''.join, itertools.permutations(pool)))) # 3개의 원소로 수열 만들기
 print(list(map(''.join, itertools.permutations(pool, 2)))) # 2개의 원소로 수열 만들기
-print(list(map(''.join, itertools.combinations(pool,2))))
+print(list(map(''.join, itertools.combinations(pool,2 ))))
+
+print('permutations')
+print(*list(itertools.permutations([1,5] )))
+print(*list(itertools.permutations([1,5],1 )))
+print(*list(itertools.permutations([1,5],2 )))
+print(*list(itertools.permutations([1,5],3 )))
 
 
 

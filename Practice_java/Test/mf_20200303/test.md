@@ -45,7 +45,7 @@
 
 보기 입력 1
 
-1↵
+1
 donGyi ␣kiM
 
 1
@@ -151,6 +151,12 @@ class Main {
 
 ```
 
+* 참고 : 위 제시된 코드에서는 객체를 생성하고 있지 않기 때문에 모든 함수를 static으로 지정해야만 정상적으로 동작한다. 그렇지 않으면 
+
+> non static method cannot be referenced from a non static context
+
+에러가 생길 것이다! 
+
 
 
 #### 실내 온도 **제출 완료** 
@@ -158,6 +164,10 @@ class Main {
 ### 오답
 
 -> int, double 계산시 double로 자동 형변환
+
+-> hashmap으로 재구현해보기
+
+
 
 
 
@@ -327,6 +337,7 @@ class Main {
 		for( int i = 0 ; i < logs.length ; i ++ ){
 			// 로그 기록 분리
 			row = logs[i].split(" "); //0: time, 1: 명령, 2: 온도
+            // -> // [0] time, [1] 명령 로 주석 수정할 것 ㅠㅠ 
 			
 			//명령어
 			commands = row[1].replace("TURN-", "").split("-"); // [ {on || off || Set} , temp ]
@@ -634,14 +645,14 @@ public class Main {
 	*/
   public static void main(String[] args) {
 		//네 점 p, q, r, s를 차례로 입력받는다.
-		Point p = new Point(scanner.nextInt(), scanner.nextInt());
-		Point q = new Point(scanner.nextInt(), scanner.nextInt());
-		Point r = new Point(scanner.nextInt(), scanner.nextInt());
-		Point s = new Point(scanner.nextInt(), scanner.nextInt());
+		//Point p = new Point(scanner.nextInt(), scanner.nextInt());
+		//Point q = new Point(scanner.nextInt(), scanner.nextInt());
+		//Point r = new Point(scanner.nextInt(), scanner.nextInt());
+		//Point s = new Point(scanner.nextInt(), scanner.nextInt());
       
         Point p = new Point(-7,5);
 		Point q = new Point(0,0);
-		Point r = new Point(-3,3);
+		Point r = new Point(-3,-3);
 		Point s = new Point(4,2);
 		
 		
@@ -687,6 +698,8 @@ class Point{
 }
 
 ```
+
+
 
 
 
@@ -775,4 +788,8 @@ FROM Students S
 GROUP BY S.StudentName
 ORDER BY COUNT DESC
 ```
+
+... 바보인가 , 그룹핑을 StudentName이 아닌 StudentID로 하는 것이 맞았을 것이다.
+
+빠르게 풀려고 출력에만 집중한 탓..T.T 
 
