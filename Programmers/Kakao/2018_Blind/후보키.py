@@ -36,8 +36,6 @@
 import itertools
 
 
-
-
 def solution(relation):
     answer = list()
     k = 1 << len(relation[0]) #columns의 모든 조합만들기
@@ -54,7 +52,6 @@ def solution(relation):
             answer.append(i)
     return len(answer)
 
-    
 
 
 relation = [["100","ryan","music","2"],
@@ -64,4 +61,38 @@ relation = [["100","ryan","music","2"],
             ["500","muzi","music","3"],
             ["600","apeach","music","2"]]
 
-solution(relation)
+print(solution(relation))
+
+## 라이브러리 사용
+# from itertools import chain, combinations
+
+# def get_all_unique_subset(iterable):
+#     s = list(iterable)
+#     return chain.from_iterable(combinations(s,r) for r in range(len(s)+1))
+
+# def solution_lib(relation):
+#     unique_list = get_all_unique_subset(relation)
+#     unique_list = sorted(unique_list, key=lambda  x: len(x))
+
+#     #부분집합 중에서 최소성을 만족하는 부분집함(열의 쌍) 구하기
+#     answer_list = []
+#     for subset in unique_list:
+#         subset = set(subset)
+#         check = True
+#         for j in answer_list:
+#             if j.issubset(subset):
+#                 check=False
+            
+#         if check == True:
+#             answer_list.append(subset)
+        
+#         return len(answer_list)
+
+# relation = [["100","ryan","music","2"],
+#             ["200","apeach","math","2"],
+#             ["300","tube","computer","3"],
+#             ["400","con","computer","4"],
+#             ["500","muzi","music","3"],
+#             ["600","apeach","music","2"]]
+
+# print(solution_lib(relation))
