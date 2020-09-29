@@ -10,7 +10,7 @@
 # print(remains.items())
 
 #시간초과
-def solution(routes=[[-20,15], [-14,-5], [-18,-13], [-5,-3]]):
+def solution1(routes=[[-20,15], [-14,-5], [-18,-13], [-5,-3]]):
     answer = 0
 
     #load 좌표 그리기
@@ -44,7 +44,6 @@ def solution(routes=[[-20,15], [-14,-5], [-18,-13], [-5,-3]]):
 
     return answer
     
-print(solution())
 
 
 #다른사람풀이
@@ -53,9 +52,10 @@ print(solution())
 #    (  nextItem[0] <= maxCoord(이전에 검색했던 좌표들중에 가장 큰(먼?) 도착지점 값을 저장한 값 (preItem[1]) 면 )
 # 3. 안겹치면  nextItem[0] > maxCoord 면 answer +=1 하면된다. 
 
-def solution(routes):
+def solution(routes=[[-20,15], [-14,-5], [-18,-13], [-5,-3]]):
     answer = 0
     routes.sort()
+    print(routes)
 
     standard = routes[0][1]
     routes.pop(0)
@@ -68,6 +68,8 @@ def solution(routes):
             standard = item[1]
             answer+=1
     return answer
+
+print(solution())
 
 
 #허헐.. 너무 쉽고 빨라서 화가난다.

@@ -4,9 +4,9 @@ from collections import deque
 
 def solution(n, edge):
     answer = 0
-
-    #nodes에 edge 정보저장
     nodes = [ [] for _ in range(n+1) ]
+    #nodes에 edge 정보저장
+    
     for item in edge:
         # nodes[min(item)].append(max(item))
         a,b = item
