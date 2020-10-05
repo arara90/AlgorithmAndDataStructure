@@ -54,3 +54,10 @@ def BFS(node):
 
 
 print(' '.join(map(str, BFS(V))))
+
+#5 5 3
+# 5 4
+# 5 2
+# 1 2
+# 3 4
+# 3 1
