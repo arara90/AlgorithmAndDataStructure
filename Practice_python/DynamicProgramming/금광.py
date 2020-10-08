@@ -1,3 +1,7 @@
+# 동빈나 이코테 6.다이나믹 프로그래밍 (52:38)
+# https://www.youtube.com/watch?v=5Lu34WIx2Us&list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC&index=6
+
+
 # n*m 의 금광이 있습니다.
 # 채굴자는 첫번째 열부터 출발하여 금을 캐기 시작합니다. 맨처음에는 첫번째 열의 어느 행에서든 출발할 수 있습니다.
 # 이후에 m-1번에 걸쳐 매번 오른쪽 위, 오른쪽, 오른쪽 아래 3가지 중 하나의 위치로 이동합니다.
