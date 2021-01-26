@@ -29,6 +29,8 @@ for _ in range(m):
     graph[a].append((b, c))
 
 # 방문하지 않은 노드 중에서, 가장 최단거리가 짧은 노드의
+
+
 def get_smallest_node():
     min_value = INF
     index = 0  # 가장 최단 거리가 짧은 노드(인덱스)
@@ -47,7 +49,7 @@ def dijkstra(start):
         distance[j[0]] = j[1]  # j[0]은 다음노드 인덱스, j[1]은 거기까지 가는 비용
 
     # 시작노드를 제외한 전체 n-1개의 노드에 대해 반복
-    for i in range(n-1):
+    for _ in range(n-1):
         # 현재 최단 거리가 가장 짧은 노드를 꺼내서, 방문처리
         now = get_smallest_node()
         visited[now] = True
