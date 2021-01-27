@@ -31,7 +31,7 @@ def solution(progresses, speeds):
 # 다른 사람 풀이
 # pop과 반복문 같이 쓰기와 직관적인 풀이! 
 
-def solution(progresses, speeds):
+def solution2(progresses, speeds):
     answer = []
     time = 0
     count = 0
