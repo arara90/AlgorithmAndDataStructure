@@ -25,8 +25,8 @@ def solution(jobs=[[0, 10], [4, 10], [5, 11], [15, 2]]):
 
                 if(not jobs):
                     break
-        
-        #heap에 있는 작업 꺼내서 처리
+
+        # heap에 있는 작업 꺼내서 처리
         if(currHeap):
             curr = heapq.heappop(currHeap)
             workTime = currTime - curr[1] + curr[0]  # 현재시간 - 요청시점 + 소요시간
