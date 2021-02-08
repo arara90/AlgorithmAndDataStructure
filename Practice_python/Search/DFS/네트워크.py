@@ -55,6 +55,7 @@
 def dfs(curr, computers):
     st.append(curr)
     nodes = computers[curr]
+    
     for computer, conn in enumerate(nodes):
         if(conn==1 and visited[computer]==0):
             visited[computer] = 1
@@ -74,5 +75,5 @@ def solution(n, computers):
         if visited[curr]==0:
             answer+=1
             dfs(curr, computers)
-            
+
     return answer
